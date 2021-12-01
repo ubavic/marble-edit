@@ -1,0 +1,181 @@
+body {
+    background-color: #e6e4d8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #e6e4d8;
+    border-radius: 2px;
+}
+
+header {
+    margin: 0 0 1em 0;
+    font-size: 2em;
+    color: rgb(8, 78, 55);
+    font-style: italic;
+}
+
+.ProseMirror {
+    background-color: #FFF;
+    padding: 4px 8px 4px 14px;
+    line-height: 1.2;
+    outline: none;
+}
+
+.ProseMirror-menubar-wrapper {
+    border: 1px solid #000;
+    --lila1: #e8d8f1;
+    --lila2: #d7bde6;
+}
+
+.ProseMirror-menuitem {
+    margin: 0 2px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.ProseMirror-menuitem:hover {
+    background-color: #ddd;
+}
+
+.ProseMirror-menuseparator {
+    border-right: 1px solid #000;
+    margin-right: 1px;
+    margin-left: 1px;
+}
+
+.ProseMirror-menu-active {
+    background: var(--lila1);
+    color: black;
+    border-radius: 4px;
+}
+
+.ProseMirror-menu-disabled {
+    color: #ddd;
+}
+
+.ProseMirror-menu-disabled:hover {
+    cursor: default;
+    background-color: white;
+}
+
+.ProseMirror-menubar {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    min-height: 1em;
+    color: #666;
+    padding: 0.5em;
+    background: white;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.ProseMirror-icon {
+    display: inline-block;
+    line-height: .8;
+    vertical-align: -2px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+.ProseMirror-icon svg {
+    fill: currentColor;
+    height: 1em;
+}
+
+.ProseMirror-icon span {
+    vertical-align: text-top;
+}
+
+.ProseMirror-selectednode {
+    background-color: var(--lila1);
+}
+
+.ProseMirror p:hover, .ProseMirror li:hover,
+.ProseMirror ul:hover, .ProseMirror ol:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.math-node {
+    min-width: 1em;
+    min-height: 1em;
+    font-size: 0.95em;
+    font-family: "Consolas", "Ubuntu Mono", monospace;
+    cursor: pointer;
+}
+
+.math-node:hover {
+    background-color: var(--lila2);
+}
+
+.math-node.empty-math .math-render::before {
+    content: "(prazno)";
+    color: red;
+}
+
+.math-node .math-render.parse-error::before {
+    content: "(greška)";
+    color: red;
+    cursor: help;
+}
+
+.math-node.ProseMirror, .math-node.ProseMirror-selectednode {
+    outline: none;
+    background-color: var(--lila1);
+}
+
+.math-node .math-src {
+    display: none;
+    color: black;
+    tab-size: 4;
+    outline: none;
+}
+
+.math-node.ProseMirror-selectednode .math-src {
+    display: inline;
+}
+
+.math-node.ProseMirror-selectednode .math-render {
+    display: none;
+}
+
+math-inline {
+    display: inline;
+    white-space: nowrap;
+}
+
+math-inline .math-render {
+    display: inline-block;
+    cursor: pointer;
+}
+
+math-inline .math-src .ProseMirror {
+    display: inline;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    background-color: transparent;
+}
+
+math-display {
+    display: block;
+}
+
+math-display .math-render {
+    display: block;
+}
+
+math-display .math-src .ProseMirror {
+    display: block;
+    background-color: transparent;
+}
+
+math-display .katex-display {
+    margin: 0;
+}
+
+math-inline.math-select .math-render {
+    padding-top: 2px;
+}
